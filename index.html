@@ -39,14 +39,19 @@
     body {
       display: flex;
       overflow: hidden;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      background-color: #fff;
+    }
+
+    body.dark-theme {
+      background-color: #000;
     }
     
     .container {
       display: flex;
-      justify-content: center;
-      align-items: center;
       animation: tipsy 8s ease-in-out infinite;
-      width: 100%;
     }
     
     .amazing {
@@ -56,30 +61,72 @@
       text-shadow: 4px 4px 0px #000;
     }
 
+    .dark-theme .amazing {
+      text-shadow: 4px 4px 0px #fff;      
+    }
+
+    .theme-switch-btn {
+      font-family: 'Press Start 2P', cursive;
+      background-color: darkviolet;
+      color: whitesmoke;
+      border: none;
+      box-shadow: 0px 16px 0px #000;
+    }
+
+    .dark-theme .theme-switch-btn {
+      box-shadow: 0px 16px 0px #fff;
+    }
+
+    .theme-switch-btn:hover {
+      cursor: pointer;
+    }
+
+    .theme-switch-btn:active {
+      background-color: purple;
+      box-shadow: 0px 8px 0px #000;
+    }
+
+    .dark-theme .theme-switch-btn:active {
+      box-shadow: 0px 8px 0px #fff;
+    }
+
     @media (min-width: 320px) and (max-width: 480px) {
       .amazing { font-size: 32px; }
+      .theme-switch-btn { font-size: 16px; padding: 16px 24px; border-radius: 24px 24px; }
     }
 
     @media (min-width: 480px) and (max-width: 768px) {
       .amazing { font-size: 40px; }
+      .theme-switch-btn { font-size: 20px; padding: 20px 28px; border-radius: 28px 28px; }
     }
 
     @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
       .amazing { font-size: 48px; }
+      .theme-switch-btn { font-size: 24px; padding: 24px 32px; border-radius: 32px 32px; }
     }
 
     @media (min-width: 1024px) and (max-width: 1280px) {
       .amazing { font-size: 56px; }
+      .theme-switch-btn { font-size: 28px; padding: 28px 36px; border-radius: 36px 36px; }
     }
 
     @media (min-width: 1280px) {
       .amazing { font-size: 64px; }
+      .theme-switch-btn { font-size: 32px; padding: 32px 40px; border-radius: 40px 40px; }
     }
   </style>
 </head>
 <body>
-  <main class="container">
+  <main class="container light-theme">
     <h1 class="amazing">Toy Story 4 is Amazing</h1>
   </main>
+  <button id="theme-switch-btn" class="theme-switch-btn">Theme</button>
+
+  <script>
+    const themeSwitchBtn = document.querySelector('#theme-switch-btn');
+    themeSwitchBtn.onclick = () => {
+      document.body.classList.toggle('dark-theme');
+    };
+  </script>
 </body>
 </html>
