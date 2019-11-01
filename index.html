@@ -70,11 +70,11 @@
       background-color: darkviolet;
       color: whitesmoke;
       border: none;
-      box-shadow: 0px 16px 0px #000;
+      box-shadow: 0px 0.5em 0px #000;
     }
 
     .dark-theme .theme-switch-btn {
-      box-shadow: 0px 16px 0px #fff;
+      box-shadow: 0px 0.5em 0px #fff;
     }
 
     .theme-switch-btn:hover {
@@ -83,11 +83,11 @@
 
     .theme-switch-btn:active {
       background-color: purple;
-      box-shadow: 0px 8px 0px #000;
+      box-shadow: 0px 0.25em 0px #000;
     }
 
     .dark-theme .theme-switch-btn:active {
-      box-shadow: 0px 8px 0px #fff;
+      box-shadow: 0px 0.25em 0px #fff;
     }
 
     @media (min-width: 320px) and (max-width: 480px) {
@@ -124,9 +124,7 @@
 
   <script>
     const themeSwitchBtn = document.querySelector('#theme-switch-btn');
-    themeSwitchBtn.onclick = () => {
-      document.body.classList.toggle('dark-theme');
-    };
+    themeSwitchBtn.onclick = () => document.body.classList.toggle('dark-theme');
   </script>
 </body>
 </html>
