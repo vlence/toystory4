@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Toy Story 4 is Amazing</title>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    @keyframes rainbow {
+      0% { color: violet; }
+      10% { color: palevioletred; }
+      20% { color: mediumvioletred; }
+      30% { color: blueviolet; }
+      40% { color: darkviolet; }
+      50% { color: purple; }
+      60% { color: darkviolet; }
+      70% { color: blueviolet; }
+      80% { color: mediumvioletred; }
+      90% { color: palevioletred; }
+      100% { color: violet; }
+    }
+
+    @keyframes bob {
+      0% { transform: translateY(0px); }
+      25% { transform: translateY(-8px); }
+      50% { transform: translateY(0px); }
+      75% { transform: translateY(8px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes tipsy {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(-2deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(2deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    body {
+      display: flex;
+      overflow: hidden;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: tipsy 8s ease-in-out infinite;
+      width: 100%;
+    }
+    
+    .amazing {
+      animation: rainbow 2s ease-in-out infinite, bob 4s linear infinite;
+      font-family: 'Press Start 2P', cursive;
+      text-align: center;
+      text-shadow: 4px 4px 0px #000;
+    }
+
+    @media (min-width: 320px) and (max-width: 480px) {
+      .amazing { font-size: 32px; }
+    }
+
+    @media (min-width: 480px) and (max-width: 768px) {
+      .amazing { font-size: 40px; }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+      .amazing { font-size: 48px; }
+    }
+
+    @media (min-width: 1024px) and (max-width: 1280px) {
+      .amazing { font-size: 56px; }
+    }
+
+    @media (min-width: 1280px) {
+      .amazing { font-size: 64px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1 class="amazing">Toy Story 4 is Amazing</h1>
+  </main>
+</body>
+</html>
